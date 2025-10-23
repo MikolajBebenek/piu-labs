@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uwagi o formularzach HTML</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>
+          Czy warto używać formularzy
+          <strong style="color: purple">HTML?</strong>
+        </h1>
+        <h2 style="color: green"><em>Zalety</em></h2>
+        <ul>
+          <li><strong>Łatwe w tworzeniu</strong> i integracji z serwerem.</li>
+          <li>Nie wymagają <em>JavaScriptu</em> do podstawowego działania.</li>
+          <li>
+            Oferują <mark>wbudowaną walidację</mark> (np. <code>required</code>,
+            <code>type="email"</code>), co ułatwia życie twórcy i użytkownikowi.
+          </li>
+          <li>
+            <u>Dobrze wspierane</u> przez wszystkie przeglądarki — to czyni je
+            <strong>niezawodnym rozwiązaniem</strong>.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="color: red"><em>Wady</em></h2>
+        <ul>
+          <li>
+            <strong>Brak interaktywności</strong> bez wsparcia JavaScript —
+            formularz sam z siebie nie potrafi reagować dynamicznie.
+          </li>
+          <li>
+            <em>Ograniczona obsługa błędów</em> po stronie użytkownika — trudno
+            np. wyświetlać komunikaty bez przeładowania strony.
+          </li>
+          <li>
+            Nie umożliwiają <u>dynamicznego dodawania pól</u> ani modyfikacji
+            zawartości w locie.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><em>Kiedy warto stosować</em></h2>
+        <ul>
+          <li>
+            <em>Proste formularze</em> kontaktowe i rejestracyjne — wystarczą
+            standardowe pola tekstowe i przycisk.
+          </li>
+          <li>
+            <strong>Ankiety i konkursy</strong>, gdzie nie potrzeba logiki po
+            stronie klienta.
+          </li>
+          <li>
+            Przekazywanie <mark>niewielkiej ilości danych</mark> do serwera, np.
+            imienia, e-maila, daty urodzenia.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><em>Kiedy lepiej nie</em></h2>
+        <ul>
+          <li>
+            Przy <strong>rozbudowanych, wieloetapowych formularzach</strong>,
+            gdzie potrzebna jest pamięć stanu lub walidacja w czasie
+            rzeczywistym.
+          </li>
+          <li>
+            Gdy wymagane są <em>dynamiczne reakcje</em> (np. AJAX,
+            <u>walidacja w locie</u>).
+          </li>
+          <li>
+            Gdy interfejs powinien działać
+            <mark>bez przeładowania strony</mark> — wtedy HTML to za mało.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 • Autor: Mikołaj Bębenek</p>
+    </footer>
+  </body>
+</html>
