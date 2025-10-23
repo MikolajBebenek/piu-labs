@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #ffffff;
 }
 form {
   max-width: 500px;
@@ -128,6 +129,7 @@ input[type='color'] {
   cursor: pointer;
   font-size: 30px;
   transition: 0.3s;
+  user-select: none;
 }
 .theme-icon:hover {
   transform: rotate(20deg);
@@ -141,16 +143,50 @@ input[type='color'] {
   --input-bg: #ffffff;
   --border: #000000;
   color-scheme: light;
+  --icon-light: '🌞';
+  --icon-dark: '🌙';
 }
 
-/* Dark mode*/
+/* dopasownie do systemu */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --fg: #ffffff;
+    --form-bg: #2a2a2a;
+    --input-bg: #3a3a3a;
+    --border: #cccccc;
+  }
+
+  /* ciemny motyw - pokaz slonce */
+  .theme-icon::before {
+    content: var(--icon-light);
+  }
+}
+
+/* Dark mode - zmiana motywu */
 body:has(#theme-toggle:checked) {
-  --bg: #1c1c1c;
-  --fg: #ffffff;
-  --form-bg: #2a2a2a;
-  --input-bg: #3a3a3a;
-  --border: #cccccc;
-  color-scheme: dark;
+  color-scheme: light;
+  --fg: #000000;
+  --form-bg: #ffffff;
+  --input-bg: #ffffff;
+  --border: #000000;
+}
+
+/* ikonka swap */
+.theme-icon::before {
+  content: var(--icon-dark);
+}
+body:has(#theme-toggle:checked) .theme-icon::before {
+  content: var(--icon-light);
+}
+
+/* płynne przejście :) */
+body,
+form,
+input,
+select,
+fieldset {
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
 }
 
 .titleandchangemode {
@@ -163,6 +199,7 @@ body:has(#theme-toggle:checked) {
 }
 .titleandchangemode .first {
   flex: 1;
+  color: #000000;
 }
 .titleandchangemode .second {
   display: flex;
