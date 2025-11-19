@@ -7,6 +7,12 @@ html {
 body {
   margin: 1rem;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
 a {
@@ -16,4 +22,32 @@ a {
 }
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
+}
+.lab1 button {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: gray;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.lab1 button:hover {
+  background-color: black;
+}
+.back {
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.back:hover {
+  color: rgb(54, 54, 54);
 }

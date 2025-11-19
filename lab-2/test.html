@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsywne obrazy – demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        text-align: center;
+      }
+      picture,
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsywny obraz w HTML</h1>
+    <h2>PICTURE</h2>
+    <picture>
+      <source srcset="images/d_1500.jpg" media="(min-width: 1200px)" />
+      <source srcset="images/d_1000.jpg" media="(min-width: 800px)" />
+      <source srcset="images/d_0600.jpg" media="(max-width: 799px)" />
+      <img id="mainImage" src="d_1000.jpg" alt="Drezno" />
+    </picture>
+  </body>
+  <h2>IMG</h2>
+  <img
+    src="images/d_1000.jpg"
+    srcset="
+      images/d_0600.jpg  600w,
+      images/d_1000.jpg 1000w,
+      images/d_1500.jpg 1500w
+    "
+    sizes="(max-width: 799px) 600px, 
+         (max-width: 1199px) 1000px, 
+         1500px"
+    alt="Drezno"
+  />
+</html>
