@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+}
+.theme-picker {
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: lightyellow;
+}
+
+.theme-picker {
+  margin: 0;
+}
+.theme-picker legend {
+  font-weight: bold;
+  padding: 0px 15px;
+}
+
+.container {
+  width: 100%;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background-color: lightyellow;
+  margin: 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/*BLUE*/
+
+.item {
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  flex: 0 1 calc(32% - 1rem);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    flex: 0 0 auto;
+    width: 60%;
+  }
+}
+
+/*RED*/
+
+body:has(input[value='red']:checked) .item {
+  background-color: red;
+  flex: 1 1 15%;
+}
+
+body:has(input[value='red']:checked) .item:nth-child(1) {
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+body:has(input[value='red']:checked) .item:nth-child(1)::after {
+  content: '(Jestem większy i na środku!)';
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+  font-weight: normal;
+}
+
+body:has(input[value='red']:checked) .item:nth-child(1) {
+  order: 3;
+  flex-basis: 25%;
+}
+
+body:has(input[value='red']:checked) .item:nth-child(2) {
+  order: 1;
+}
+body:has(input[value='red']:checked) .item:nth-child(3) {
+  order: 2;
+}
+body:has(input[value='red']:checked) .item:nth-child(4) {
+  order: 4;
+}
+body:has(input[value='red']:checked) .item:nth-child(5) {
+  order: 5;
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value='red']:checked) .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  body:has(input[value='red']:checked) .item {
+    flex: 1 1 48%;
+    width: auto;
+  }
+
+  body:has(input[value='red']:checked) .item:nth-child(1) {
+    flex-basis: 100%;
+  }
+}
+
+/*GREEN*/
+
+body:has(input[value='green']:checked) .item {
+  background-color: green;
+  flex: 0 0 auto;
+}
+
+body:has(input[value='green']:checked) .item:nth-child(1) {
+  flex-basis: calc((100% - 4rem) * 0.3);
+  position: relative;
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
+}
+
+body:has(input[value='green']:checked) .item:nth-child(1)::before {
+  content: '😀';
+  font-size: 2rem;
+  position: absolute;
+  left: 0.5rem;
+  transform: translateY(-5%);
+}
+
+body:has(input[value='green']:checked) .item:nth-child(1)::after {
+  content: '😀';
+  font-size: 2rem;
+  position: absolute;
+  right: 0.5rem;
+  transform: translateY(-5%);
+}
+
+body:has(input[value='green']:checked) .item:nth-child(2) {
+  flex-basis: calc((100% - 4rem) * 0.25);
+  @media (max-width: 1024px) {
+    width: 75%;
+  }
+}
+
+body:has(input[value='green']:checked) .item:nth-child(3) {
+  flex-basis: calc((100% - 4rem) * 0.2);
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
+}
+
+body:has(input[value='green']:checked) .item:nth-child(4) {
+  flex-basis: calc((100% - 4rem) * 0.15);
+  @media (max-width: 1024px) {
+    width: 45%;
+  }
+}
+
+body:has(input[value='green']:checked) .item:nth-child(5) {
+  flex-basis: calc((100% - 4rem) * 0.1);
+  @media (max-width: 1024px) {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1024px) {
+  body:has(input[value='green']:checked) .container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}
