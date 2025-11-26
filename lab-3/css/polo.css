@@ -1,0 +1,231 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: #265c9a;
+  --button-text: #ffffff;
+  --card-bg: #f2f2f2;
+}
+
+body:has(#color-red:checked) {
+  --accent-color: #c63133;
+}
+
+body:has(#color-green:checked) {
+  --accent-color: #3e8d40;
+}
+
+body:has(#color-yellow:checked) {
+  --accent-color: #f8bf3b;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: #ffffff;
+  color: #222;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  background: var(--card-bg);
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.product-image {
+  flex: 0 0 min(500px, 100%);
+  width: min(500px, 100%);
+  border: 2px solid var(--accent-color);
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+.polo {
+  display: none;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+body:has(#color-blue:checked) .polo--blue {
+  display: block;
+}
+
+body:has(#color-red:checked) .polo--red {
+  display: block;
+}
+
+body:has(#color-green:checked) .polo--green {
+  display: block;
+}
+
+body:has(#color-yellow:checked) .polo--yellow {
+  display: block;
+}
+
+.product-details {
+  flex: 1 1 300px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.product-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.product-title {
+  font-size: 1.5rem;
+}
+
+.product-badge {
+  padding: 0.3rem 0.6rem 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+  background: var(--accent-color);
+  color: var(--button-text);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+  margin-inline: auto;
+}
+
+.section-label {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.color-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.color-options input,
+.size-options input {
+  display: none;
+}
+
+.color-dot {
+  --dot-color: #000;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid #222;
+  display: inline-block;
+  cursor: pointer;
+  background: var(--dot-color);
+  position: relative;
+}
+
+.color-dot--blue {
+  --dot-color: #1e63c6;
+}
+
+.color-dot--red {
+  --dot-color: #c62828;
+}
+
+.color-dot--green {
+  --dot-color: #2e7d32;
+}
+
+.color-dot--yellow {
+  --dot-color: #f3b417;
+}
+
+.color-dot::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.color-options input:checked + .color-dot {
+  background: #ffffff;
+}
+
+.color-options input:checked + .color-dot::before {
+  background: var(--dot-color);
+}
+
+.size-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.size-options label {
+  min-width: 42px;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  border: 2px solid #222;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.size-options input:checked + label {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: #222;
+}
+
+.product-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.add-to-cart {
+  border: 2px solid #222;
+  padding: 1.1rem 2rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent-color);
+  color: var(--button-text);
+}

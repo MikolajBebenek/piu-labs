@@ -2,11 +2,113 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Koszulka polo – karta produktu</title>
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <main>
+      <article>
+        <div class="product-image">
+          <img
+            src="images/polo_b.png"
+            alt="Koszulka polo – niebieska"
+            class="polo polo--blue"
+          />
+          <img
+            src="images/polo_r.png"
+            alt="Koszulka polo – czerwona"
+            class="polo polo--red"
+          />
+          <img
+            src="images/polo_g.png"
+            alt="Koszulka polo – zielona"
+            class="polo polo--green"
+          />
+          <img
+            src="images/polo_y.png"
+            alt="Koszulka polo – żółta"
+            class="polo polo--yellow"
+          />
+        </div>
+
+        <div class="product-details">
+          <div class="product-top">
+            <header>
+              <h2 class="product-title">Koszulka Polo</h2>
+              <span class="product-badge">Promocja!</span>
+            </header>
+
+            <p class="product-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quis adipisci maiores.
+            </p>
+          </div>
+
+          <section>
+            <span class="section-label">Kolor</span>
+            <div class="color-options">
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  id="color-blue"
+                  value="blue"
+                  checked
+                />
+                <span class="color-dot color-dot--blue"></span>
+              </label>
+
+              <label>
+                <input type="radio" name="color" id="color-red" value="red" />
+                <span class="color-dot color-dot--red"></span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  id="color-green"
+                  value="green"
+                />
+                <span class="color-dot color-dot--green"></span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="color"
+                  id="color-yellow"
+                  value="yellow"
+                />
+                <span class="color-dot color-dot--yellow"></span>
+              </label>
+            </div>
+          </section>
+
+          <section>
+            <span class="section-label">Rozmiar</span>
+            <div class="size-options">
+              <input type="radio" name="size" id="size-s" />
+              <label for="size-s">S</label>
+
+              <input type="radio" name="size" id="size-m" checked />
+              <label for="size-m">M</label>
+
+              <input type="radio" name="size" id="size-l" />
+              <label for="size-l">L</label>
+
+              <input type="radio" name="size" id="size-xl" />
+              <label for="size-xl">XL</label>
+            </div>
+          </section>
+
+          <p class="product-price">59,99 zł</p>
+
+          <div class="product-footer">
+            <button type="button" class="add-to-cart">🛒 Do koszyka</button>
+          </div>
+        </div>
+      </article>
+    </main>
   </body>
 </html>
