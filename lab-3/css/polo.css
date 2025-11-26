@@ -50,6 +50,23 @@ article {
   border-radius: 0.5rem;
   background: #fff;
   padding: 1rem;
+  transition: border 0.2s ease;
+}
+
+body:has(#size-s:checked) .product-image {
+  animation: size-pop-s 0.4s ease-out;
+}
+
+body:has(#size-m:checked) .product-image {
+  animation: size-pop-m 0.4s ease-out;
+}
+
+body:has(#size-l:checked) .product-image {
+  animation: size-pop-l 0.4s ease-out;
+}
+
+body:has(#size-xl:checked) .product-image {
+  animation: size-pop-xl 0.4s ease-out;
 }
 
 .polo {
@@ -61,18 +78,22 @@ article {
 
 body:has(#color-blue:checked) .polo--blue {
   display: block;
+  animation: spin-shirt 1s ease;
 }
 
 body:has(#color-red:checked) .polo--red {
   display: block;
+  animation: spin-shirt 1s ease;
 }
 
 body:has(#color-green:checked) .polo--green {
   display: block;
+  animation: spin-shirt 1s ease;
 }
 
 body:has(#color-yellow:checked) .polo--yellow {
   display: block;
+  animation: spin-shirt 1s ease;
 }
 
 .product-details {
@@ -111,6 +132,23 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease;
+}
+
+body:has(#color-blue:checked) .product-badge {
+  animation: badge-pop-blue 0.3s ease-out;
+}
+
+body:has(#color-red:checked) .product-badge {
+  animation: badge-pop-red 0.3s ease-out;
+}
+
+body:has(#color-green:checked) .product-badge {
+  animation: badge-pop-green 0.3s ease-out;
+}
+
+body:has(#color-yellow:checked) .product-badge {
+  animation: badge-pop-yellow 0.3s ease-out;
 }
 
 .product-description {
@@ -152,6 +190,12 @@ section {
   cursor: pointer;
   background: var(--dot-color);
   position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-dot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .color-dot--blue {
@@ -184,6 +228,7 @@ section {
 
 .color-options input:checked + .color-dot::before {
   background: var(--dot-color);
+  animation: bounce 0.2s ease-out;
 }
 
 .size-options {
@@ -199,6 +244,13 @@ section {
   border: 2px solid #222;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.size-options label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .size-options input:checked + label {
@@ -217,6 +269,7 @@ section {
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
+  transition: 0.2s ease;
 }
 
 .add-to-cart {
@@ -228,4 +281,152 @@ section {
   cursor: pointer;
   background: var(--accent-color);
   color: var(--button-text);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-to-cart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart:active {
+  transform: translateY(3px) scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+body:has(#add-to-cart:hover) .product-price {
+  transform: scale(1.2);
+}
+
+body:has(#add-to-cart:active) .product-price {
+  transform: scale(1);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin-shirt {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pop-shirt {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes size-pop-s {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes size-pop-m {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes size-pop-l {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes size-pop-xl {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes badge-pop-blue {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes badge-pop-red {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes badge-pop-green {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes badge-pop-yellow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
