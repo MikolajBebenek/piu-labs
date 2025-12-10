@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 5 – Kształty</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <h1 class="page-title">Lab 5 – Kształty</h1>
+        <a href=".." class="page-back">Powrót</a>
+      </header>
+
+      <section class="board" aria-label="Kształty">
+        <article class="panel panel-controls">
+          <header class="panel-header">
+            <h2 class="panel-title">Panel sterowania</h2>
+            <p class="panel-subtitle">
+              Dodawaj kształty, koloruj je i sprawdzaj liczniki.
+            </p>
+          </header>
+
+          <div class="panel-sections-row">
+            <section class="panel-section">
+              <h3 class="panel-section-title">Liczniki</h3>
+              <div class="counters">
+                <div class="counter">
+                  <span class="counter-label">Kwadraty</span>
+                  <span class="counter-value" data-counter="square">0</span>
+                </div>
+                <div class="counter">
+                  <span class="counter-label">Kółka</span>
+                  <span class="counter-value" data-counter="circle">0</span>
+                </div>
+                <div class="counter counter-total">
+                  <span class="counter-label">Razem</span>
+                  <span class="counter-value" data-counter="total">0</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel-section">
+              <h3 class="panel-section-title">Dodawanie kształtów</h3>
+              <div class="panel-buttons">
+                <button
+                  type="button"
+                  class="btn panel-btn panel-btn-add"
+                  data-action="add-square"
+                >
+                  + Dodaj kwadrat
+                </button>
+                <button
+                  type="button"
+                  class="btn panel-btn panel-btn-add"
+                  data-action="add-circle"
+                >
+                  + Dodaj kółko
+                </button>
+              </div>
+            </section>
+
+            <section class="panel-section">
+              <h3 class="panel-section-title">Kolorowanie</h3>
+              <div class="panel-buttons">
+                <button
+                  type="button"
+                  class="btn panel-btn"
+                  data-action="recolor-square"
+                >
+                  Przekoloruj kwadraty
+                </button>
+                <button
+                  type="button"
+                  class="btn panel-btn"
+                  data-action="recolor-circle"
+                >
+                  Przekoloruj kółka
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <p class="panel-hint">
+            Stan aplikacji jest przechowywany w
+            <code>localStorage</code>, a interfejs aktualizuje się automatycznie
+            dzięki wzorcowi <strong>Obserwator</strong>.
+          </p>
+        </article>
+
+        <article class="panel panel-canvas">
+          <header class="panel-header">
+            <h2 class="panel-title">Scena</h2>
+            <p class="panel-subtitle">Kliknij kształt, aby go usunąć 🗑️</p>
+          </header>
+
+          <div class="canvas" data-shapes></div>
+        </article>
+      </section>
+
+      <footer class="page-footer">
+        <p>
+          Kształty są zarządzane przez globalny <code>store</code> (ES6 modules
+          + Observer). Stan jest zapisywany w <code>localStorage</code>, a
+          liczniki wyliczane dynamicznie na podstawie listy kształtów.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
